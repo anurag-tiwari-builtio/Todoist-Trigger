@@ -1,0 +1,44 @@
+{
+  "name": "Todoist",
+  "description": "Sample connector for todoist",
+  "triggers": [
+    "/v3/project_created",
+    "/v3/task_created",
+    "/v3/task_completed"
+  ],
+  "actions": [],
+  "version": 1,
+  "auth_type": "oauth",
+  "docs_link": "http://docs.example.com",
+  "triggerVersion": "v3",
+  "triggerType": "webhook",
+  "appId": "cl24bd8d4fda5e0451104711",
+  "lookup": true,
+  "lookup_attachments": [
+    {
+      "lookup_id": "fetch_projects",
+      "trigger_id": "/v3/task_created",
+      "field_id": "project_id",
+      "dependencies": []
+    },
+    {
+      "lookup_id": "fetch_projects",
+      "trigger_id": "/v3/task_completed",
+      "field_id": "project_id",
+      "dependencies": []
+    },
+    {
+      "lookup_id": "fetch_labels",
+      "trigger_id": "/v3/task_completed",
+      "field_id": "label_id",
+      "dependencies": []
+    }
+  ],
+  "icon": "todoist",
+  "audience": [
+    "akash.patel@raweng.com",
+    "kunal.katkar@built.io",
+    "kunal.katkar@raweng.com",
+    "chittaranjan.bhole@raweng.com"
+  ]
+}

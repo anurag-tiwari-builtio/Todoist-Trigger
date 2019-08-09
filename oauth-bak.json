@@ -1,0 +1,41 @@
+{
+    "type": "oauth2",
+    "title": "flowtodoist",
+    "clientId": "2508c88cd3434696b2cf4b79ae3e892f",
+    "clientSecret": "41b4bcccfe8d4a209c391afa28a644eb",
+    "authURL": "https://todoist.com/oauth/authorize",
+    "tokenURL": "https://todoist.com/oauth/access_token",
+    "authQueryParams": {},
+    "tokenParams": {
+        "method": "POST",
+        "headers": {
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            "client_id": "{client_id}",
+            "client_secret": "{client_secret}",
+            "redirect_uri": "{redirect_uri}",
+            "grant_type": "authorization_code"
+        }
+    },
+    "refreshParams": {
+        "client_id": "{client_id}",
+        "client_secret": "{client_secret}",
+        "redirect_uri": "{redirect_uri}",
+        "grant_type": "refresh_token"
+    },
+    "requiredParams": [],
+    "refreshURL": "https://todoist.com/oauth/access_token",
+    "scope": {
+        "data:read": "to read the data for the items"
+    },
+    "validate": {
+        "method": "POST",
+        "url": "https://todoist.com/api/v7/sync",
+        "headers": {
+            "Authorization": "Bearer {access_token}"
+        },
+        "query": {}
+    },
+    "redirectURL": "https://dev-flowoauth.built.io/oauth/flowtodoist_0349bfa056/cli/return"
+}
